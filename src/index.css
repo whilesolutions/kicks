@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+body {
+  word-spacing: normal;
+  letter-spacing: -0.015em;
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); } 
+}
+
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+  width: max-content;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* --- ERP Premium Light Theme Mapping --- */
+.light-erp {
+  background-color: #FDFDFD !important;
+  color: #111827 !important; /* text-gray-900 */
+
+  /* Redefine font size variables in Tailwind v4 to scale up standard sizes in the ERP */
+  --text-xs: 0.84rem !important;   /* normally 12px -> now 13.5px */
+  --text-sm: 0.96rem !important;   /* normally 14px -> now 15.4px */
+  --text-base: 1.08rem !important; /* normally 16px -> now 17.3px */
+  --text-lg: 1.20rem !important;   /* normally 18px -> now 19.2px */
+  --text-xl: 1.34rem !important;   /* normally 20px -> now 21.4px */
+  --text-2xl: 1.64rem !important;  /* normally 24px -> now 26.2px */
+  --text-3xl: 2.14rem !important;  /* normally 30px -> now 34.2px */
+}
+
+/* Force all elements inside the ERP system to use Inter and render cleanly */
+.light-erp,
+.light-erp * {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Base structural overrides */
+.light-erp h1,
+.light-erp h2,
+.light-erp h3,
+.light-erp h4,
+.light-erp h5,
+.light-erp h6 {
+  color: #111827 !important;
+}
+
+.light-erp label {
+  color: #374151 !important; /* text-gray-700 */
+}
+
+/* Background mappings */
+.light-erp .bg-\[\#0E0E0E\],
+.light-erp div[class*="bg-[#0E0E0E]"] {
+  background-color: #FDFDFD !important;
+}
+
+.light-erp .bg-\[\#161616\],
+.light-erp div[class*="bg-[#161616]"],
+.light-erp form[class*="bg-[#161616]"] {
+  background-color: #FFFFFF !important;
+  border-color: #E5E7EB !important;
+}
+
+.light-erp .bg-\[\#111111\],
+.light-erp div[class*="bg-[#111111]"],
+.light-erp form[class*="bg-[#111111]"],
+.light-erp input[class*="bg-[#111111]"],
+.light-erp textarea[class*="bg-[#111111]"] {
+  background-color: #F9FAFB !important; /* gray-50 */
+  border-color: #E5E7EB !important;
+}
+
+.light-erp .bg-\[\#1C1C1C\],
+.light-erp div[class*="bg-[#1C1C1C]"] {
+  background-color: #F3F4F6 !important; /* gray-100 */
+}
+
+/* Force auxiliary elements with dark custom classes to render in light shades */
+.light-erp .bg-\[\#0A0A0A\],
+.light-erp div[class*="bg-[#0A0A0A]"] {
+  background-color: #FDFDFD !important;
+}
+
+/* Ensure no text is hidden by remaining black labels or badges */
+.light-erp .bg-neutral-900,
+.light-erp .bg-stone-900 {
+  background-color: #E5E7EB !important;
+  color: #111827 !important;
+}
+
+/* Border overrides */
+.light-erp .border-\[\#222\],
+.light-erp .border-\[\#1A1A1A\],
+.light-erp .border-\[\#1a1a1a\],
+.light-erp .border-\[\#232323\],
+.light-erp .border-\[\#333\],
+.light-erp .border-stone-800,
+.light-erp .divide-stone-800 {
+  border-color: #E5E7EB !important;
+}
+
+/* Text overrides */
+.light-erp .text-white {
+  color: #111827 !important;
+}
+
+.light-erp .text-gray-300,
+.light-erp .text-gray-400,
+.light-erp .text-gray-450,
+.light-erp .text-stone-300,
+.light-erp .text-stone-400 {
+  color: #4B5563 !important; /* elegant text-gray-600 */
+}
+
+/* Custom black buttons or triggers inside ERP */
+.light-erp .bg-black {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+/* Inputs, Textareas & Selects */
+.light-erp input:not([type="checkbox"]):not([type="radio"]),
+.light-erp select,
+.light-erp textarea {
+  background-color: #FFFFFF !important;
+  border: 1px solid #D1D5DB !important; /* border-gray-300 */
+  color: #111827 !important;
+}
+
+.light-erp input:focus,
+.light-erp select:focus,
+.light-erp textarea:focus {
+  border-color: #000000 !important;
+  outline: none !important;
+}
+
+.light-erp input::placeholder,
+.light-erp textarea::placeholder {
+  color: #9CA3AF !important;
+}
+
+/* Yellow Accent Elements */
+.light-erp .text-\[\#FCD901\] {
+  color: #000000 !important;
+}
+
+.light-erp .bg-\[\#FCD901\] {
+  background-color: #FCD901 !important;
+  color: #000000 !important;
+}
+
+.light-erp .border-\[\#FCD901\] {
+  border-color: #000000 !important;
+}
+
+/* Soft yellow translucent overlays used for tags or highlights */
+.light-erp .bg-\[\#FCD901\]\/10,
+.light-erp .bg-\[\#FCD901\]\/15,
+.light-erp .bg-\[\#FCD901\]\/20,
+.light-erp .bg-\[\#FCD901\]\/25,
+.light-erp .bg-\[\#FCD901\]\/50 {
+  background-color: #FFFCDF !important; /* beautiful cream yellow matching premium design */
+  color: #000000 !important;
+  border-color: #FCD901 !important;
+}
+
+.light-erp .bg-\[rgba\(212\,175\,55\,0\.05\)\] {
+  background-color: #FFFCDF !important;
+}
+
+/* Recharts grid line alignments */
+.light-erp .recharts-cartesian-grid-horizontal line,
+.light-erp .recharts-cartesian-grid-vertical line {
+  stroke: #E5E7EB !important;
+}
+
+.light-erp .recharts-text {
+  fill: #374151 !important;
+}
+
+

@@ -1,0 +1,6 @@
+{
+  "name": "Kicks & Co - Elegant Footwear",
+  "description": "Una tienda virtual minimalista de zapatos en escala de grises. Integra marcas premium, carrito de pedidos amigable, y finalización de compra vía WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
